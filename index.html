@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo sobre a Lavanda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="tema-claro">
+
+    <button id="btn-tema">Mudar Tema</button>
+    
+    <div class="container">
+        <h1>A Beleza da Lavanda</h1>
+        
+        <img src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?auto=format&fit=crop&w=800&q=80" alt="Campo de Lavanda" class="imagem-lavanda">
+        
+        <p>A lavanda é uma planta medicinal e ornamental conhecida mundialmente por suas flores arroxeadas e seu aroma suave e relaxante. É amplamente utilizada na fabricação de óleos essenciais, cosméticos e produtos de aromaterapia.</p>
+        
+        <h2>Benefícios da Lavanda:</h2>
+        <ul>
+            <li>Ajuda a diminuir o estresse e a ansiedade</li>
+            <li>Melhora a qualidade do sono</li>
+            <li>Possui propriedades calmantes e anti-inflamatórias</li>
+        </ul>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 600px;
+    text-align: center;
+}
+
+.imagem-lavanda {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    margin: 15px 0;
+}
+
+/* Botão de Tema */
+#btn-tema {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Tema Claro */
+body.tema-claro {
+    background-color: #f4effa;
+    color: #333333;
+}
+
+body.tema-claro #btn-tema {
+    background-color: #7b52b9;
+    color: #ffffff;
+}
+
+/* Tema Escuro */
+body.tema-escuro {
+    background-color: #1e1926;
+    color: #e0d6f2;
+}
+
+body.tema-escuro #btn-tema {
+    background-color: #b38add;
+    color: #1e1926;
+}
+
+const btnTema = document.getElementById('btn-tema');
+const body = document.body;
+
+btnTema.addEventListener('click', () => {
+    if (body.classList.contains('tema-claro')) {
+        body.classList.replace('tema-claro', 'tema-escuro');
+    } else {
+        body.classList.replace('tema-escuro', 'tema-claro');
+    }
+});
